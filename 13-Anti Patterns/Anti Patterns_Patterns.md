@@ -92,3 +92,21 @@ class OrderProcessor {
 * **L** - **LISKOV SUBSTITUTION**: Objects in a program should be replaceable with instances of their subtypes without altering the correctness of program.
 * **I** - **INTERFACE SEGREGATION**: Segregate interfaces as per the requirements of program, rather than one general purpose implementation.
 * **D** - **DEPENDENCY INVERSION**: Should depend on abstractions rather than concrete implementations.
+
+
+# Advantages & Disadvantages of Studying Anti-Patterns
+
+## Advantages (of knowing them)
+
+* **Recognize mistakes early** $\rightarrow$ prevents long-term technical debt.
+* **Improved code quality** $\rightarrow$ by avoiding bad practices.
+* **Better decision-making** $\rightarrow$ choose the right pattern for the job.
+* **Team alignment** $\rightarrow$ everyone shares a common understanding of what not to do.
+* **Refactoring guidance** $\rightarrow$ provides clear fixes for common bad solutions.
+
+## Disadvantages (if not handled carefully)
+
+* **Misinterpretation risk** $\rightarrow$ junior devs may copy anti-pattern examples thinking they're correct.
+* **Time consumption** $\rightarrow$ discussing them too much can delay feature development.
+* **Over-caution** $\rightarrow$ fear of making mistakes may slow down creativity.
+* **Legacy system frustration** $\rightarrow$ recognizing anti-patterns in old code without resources to fix them can cause morale issues.
