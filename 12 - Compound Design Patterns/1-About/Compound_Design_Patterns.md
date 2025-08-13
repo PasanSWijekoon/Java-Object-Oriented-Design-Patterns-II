@@ -1,10 +1,10 @@
-### Introduction
+# Introduction
 
 - **Definition:** A Compound Pattern is a design solution that combines two or more patterns to address complex design issues.
 - They often appear in real-world systems where a single pattern alone is not enough.
 - **Example:** MVC (Model-View-Controller) combines Observer, Strategy, and Composite.
 
-### Why Use Compound Patterns?
+## Why Use Compound Patterns?
 
 - Complex problems require multiple solutions.
 - Increases flexibility, scalability, and maintainability.
@@ -26,3 +26,4 @@
 3.  **Loose Coupling** – promotes flexibility.
 4.  **Scalability** – can evolve without major refactoring.
 5.  **Reusability** – components can be used independently.
+
