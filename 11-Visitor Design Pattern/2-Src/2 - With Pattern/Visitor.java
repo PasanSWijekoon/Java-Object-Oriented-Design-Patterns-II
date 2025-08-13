@@ -1,29 +1,30 @@
-
 import java.util.ArrayList;
 import java.util.List;
 
-
 //Visitor Interface
-interface ClientVisitor{
+interface ClientVisitor {
     void visit(BusinessClient businessClient);
+
     void visit(IndividualClient individualClient);
 }
 
-//Element Interface
+// Element Interface
 interface ClientElement {
     void accept(ClientVisitor visitor);
 }
 
-//Concrete Visitors
+// Concrete Visitors
 class ReportGeneratorVisitor implements ClientVisitor {
     @Override
     public void visit(BusinessClient businessClient) {
-        System.out.println("Generating report for: " + businessClient.getName()+" with revenue: " + businessClient.getRevenue());
+        System.out.println(
+                "Generating report for: " + businessClient.getName() + " with revenue: " + businessClient.getRevenue());
     }
 
     @Override
     public void visit(IndividualClient individualClient) {
-        System.out.println("Generating report for: " + individualClient.getName()+" with age: " + individualClient.getAge());
+        System.out.println(
+                "Generating report for: " + individualClient.getName() + " with age: " + individualClient.getAge());
     }
 }
 
@@ -42,11 +43,12 @@ class PremiumCalculatorVisitor implements ClientVisitor {
         } else {
             premium = 500;
         }
-        System.out.println("Calculating Individual premium for: " + individualClient.getName() + " with premium: " + premium);
+        System.out.println(
+                "Calculating Individual premium for: " + individualClient.getName() + " with premium: " + premium);
     }
 }
 
-//Concrete Elements
+// Concrete Elements
 class BusinessClient implements ClientElement {
     private String name;
     private double revenue;
