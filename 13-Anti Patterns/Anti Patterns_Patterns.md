@@ -35,3 +35,60 @@
 | **Lava Flow** | Dead/obsolete code remains | Wastes memory, confuses devs |
 | **Premature Optimization** | Optimizing too early | Adds complexity without benefit |
 | **Poltergeist** | Classes with no real purpose | Adds unnecessary indirection |
+
+### Example – God Object
+
+**Problem:** One class controls all business logic, database access, UI, etc.
+
+**Java Example (Bad):**
+
+```java
+class GodObject {
+    public void connectDB() { /* ... */ }
+    public void renderUI() { /* ... */ }
+    public void processOrder() { /* ... */ }
+}
+```
+
+**Why it's bad:**
+
+  * Violates Single Responsibility Principle.
+  * Hard to maintain, test, or extend.
+
+-----
+
+### Refactored Solution
+
+```java
+class DatabaseManager {
+    public void connectDB() { /* ... */ }
+}
+
+class UIManager {
+    public void renderUI() { /* ... */ }
+}
+
+class OrderProcessor {
+    public void processOrder() { /* ... */ }
+}
+```
+
+  * Responsibilities are separated, making the code cleaner.
+
+-----
+
+### Best Practices to Avoid Anti-Patterns
+
+  * Follow **SOLID principles.**
+  * Use **design patterns wisely.**
+  * Refactor regularly.
+  * Write unit tests.
+  * Perform code reviews.
+
+  **SOLID PRINCIPLES**
+
+* **S** - **SINGLE RESPONSIBILITY**: A class should have only one single responsibility and should have one and only one reason for change.
+* **O** - **OPEN CLOSED PRINCIPLE**: A class should be open for extension, but closed for modifications.
+* **L** - **LISKOV SUBSTITUTION**: Objects in a program should be replaceable with instances of their subtypes without altering the correctness of program.
+* **I** - **INTERFACE SEGREGATION**: Segregate interfaces as per the requirements of program, rather than one general purpose implementation.
+* **D** - **DEPENDENCY INVERSION**: Should depend on abstractions rather than concrete implementations.
