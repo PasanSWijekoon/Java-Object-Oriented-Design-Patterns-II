@@ -215,5 +215,7 @@ public class Compound {
         // This action also updates the model and triggers the view to update.
         controller.handleRequest("John Doe", 21); // Updating the student's age
 
+        // Explicitly use the view variable to display the student details
+        view.displaystudent();
     }
 }
