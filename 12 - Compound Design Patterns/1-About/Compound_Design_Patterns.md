@@ -10,3 +10,19 @@
 - Increases flexibility, scalability, and maintainability.
 - Avoids reinventing the wheel by reusing proven solutions.
 - Patterns complement each other's strengths.
+
+# Common Compound Patterns
+
+* **Model-View-Controller (MVC)** $\to$ Observer + Strategy + Composite
+* **Model-View-Presenter (MVP)** $\to$ Observer + Strategy
+* Decorator + Factory
+* Command + Composite
+* Adapter + Facade
+
+# Key Characteristics
+
+1.  **Combination of Patterns** – not random, but logically related.
+2.  **High Cohesion** – patterns support each other’s responsibilities.
+3.  **Loose Coupling** – promotes flexibility.
+4.  **Scalability** – can evolve without major refactoring.
+5.  **Reusability** – components can be used independently.
