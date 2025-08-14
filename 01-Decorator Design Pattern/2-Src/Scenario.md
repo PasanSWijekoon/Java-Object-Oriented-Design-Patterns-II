@@ -8,43 +8,48 @@ Each topping adds a **cost** and modifies the **description**.
 
 ### Class Diagram
 
-```plantuml
-@startuml
-interface Coffee {
-  + cost(): double
-  + description(): String
-}
+```mermaid
+classDiagram
+    interface Coffee {
+        <<interface>>
+        +double cost()
+        +String description()
+    }
 
-class SimpleCofee implements Coffee {
-  + cost(): double
-  + description(): String
-}
+    class SimpleCofee {
+        +double cost()
+        +String description()
+    }
 
-abstract class CofeeDecorator implements Coffee {
-  # cofee: Coffee
-  + CofeeDecorator(cofee: Coffee)
-}
+    class CofeeDecorator {
+        <<abstract>>
+        #Coffee cofee
+        +CofeeDecorator(Coffee cofee)
+    }
 
-class MilkDecorator extends CofeeDecorator {
-  + MilkDecorator(cofee: Coffee)
-  + cost(): double
-  + description(): String
-}
+    class MilkDecorator {
+        +MilkDecorator(Coffee cofee)
+        +double cost()
+        +String description()
+    }
 
-class SugarDecorator extends CofeeDecorator {
-  + SugarDecorator(cofee: Coffee)
-  + cost(): double
-  + description(): String
-}
-
-Coffee <|.. SimpleCofee
-Coffee <|.. CofeeDecorator
-CofeeDecorator <|-- MilkDecorator
-CofeeDecorator <|-- SugarDecorator
-
-CofeeDecorator o-- Coffee
-
-@enduml
+    class SugarDecorator {
+        +SugarDecorator(Coffee cofee)
+        +double cost()
+        +String description()
+    }
+    
+    class Decorator {
+        +main(String[] args)
+    }
+    
+    Coffee <|.. SimpleCofee : implements
+    Coffee <|.. CofeeDecorator : implements
+    CofeeDecorator <|-- MilkDecorator : extends
+    CofeeDecorator <|-- SugarDecorator : extends
+    CofeeDecorator "1" *-- "1" Coffee : has a
+    MilkDecorator "1" *-- "1" Coffee : has a
+    SugarDecorator "1" *-- "1" Coffee : has a
     
     
 ```
