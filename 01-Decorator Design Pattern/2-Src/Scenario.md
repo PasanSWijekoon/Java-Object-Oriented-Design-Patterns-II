@@ -10,46 +10,34 @@ Each topping adds a **cost** and modifies the **description**.
 
 ```mermaid
 classDiagram
+    direction LR
     interface Coffee {
         <<interface>>
-        +double cost()
-        +String description()
+        +cost(): double
+        +description(): String
     }
-
     class SimpleCofee {
-        +double cost()
-        +String description()
+        +cost(): double
+        +description(): String
     }
-
-    class CofeeDecorator {
+    abstract class CofeeDecorator {
         <<abstract>>
-        #Coffee cofee
-        +CofeeDecorator(Coffee cofee)
+        #cofee: Coffee
     }
-
     class MilkDecorator {
-        +MilkDecorator(Coffee cofee)
-        +double cost()
-        +String description()
+        +cost(): double
+        +description(): String
+    }
+    class SugarDecorator {
+        +cost(): double
+        +description(): String
     }
 
-    class SugarDecorator {
-        +SugarDecorator(Coffee cofee)
-        +double cost()
-        +String description()
-    }
-    
-    class Decorator {
-        +main(String[] args)
-    }
-    
-    Coffee <|.. SimpleCofee : implements
-    Coffee <|.. CofeeDecorator : implements
-    CofeeDecorator <|-- MilkDecorator : extends
-    CofeeDecorator <|-- SugarDecorator : extends
-    CofeeDecorator "1" *-- "1" Coffee : has a
-    MilkDecorator "1" *-- "1" Coffee : has a
-    SugarDecorator "1" *-- "1" Coffee : has a
+    SimpleCofee ..|> Coffee
+    CofeeDecorator ..|> Coffee
+    CofeeDecorator "1" *-- "1" Coffee : cofee
+    MilkDecorator --|> CofeeDecorator
+    SugarDecorator --|> CofeeDecorator
     
     
 ```
