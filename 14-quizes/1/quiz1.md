@@ -1,7 +1,3 @@
-Here's the content of the image in Markdown format:
-
-***
-
 ### Urban Traffic Simulation System
 
 You are working for a smart city simulation company that needs to build a real-time 3D urban traffic simulator for city planners. The simulator must display thousands of vehicles (cars, buses, trucks, motorcycles) moving along roads. Each vehicle has:
