@@ -11,8 +11,8 @@ Each topping adds a **cost** and modifies the **description**.
 ```mermaid
 classDiagram
     direction LR
-    interface Coffee {
-        <<interface>>
+    %% Coffee is an interface
+    class Coffee {
         +cost(): double
         +description(): String
     }
@@ -20,8 +20,8 @@ classDiagram
         +cost(): double
         +description(): String
     }
-    abstract class CofeeDecorator {
-        <<abstract>>
+    %% CofeeDecorator is an abstract class
+    class CofeeDecorator {
         #cofee: Coffee
     }
     class MilkDecorator {
@@ -33,11 +33,11 @@ classDiagram
         +description(): String
     }
 
-    SimpleCofee ..|> Coffee
-    CofeeDecorator ..|> Coffee
+    Coffee <|.. SimpleCofee
+    Coffee <|.. CofeeDecorator
     CofeeDecorator "1" *-- "1" Coffee : cofee
-    MilkDecorator --|> CofeeDecorator
-    SugarDecorator --|> CofeeDecorator
+    CofeeDecorator <|-- MilkDecorator
+    CofeeDecorator <|-- SugarDecorator
     
     
 ```
