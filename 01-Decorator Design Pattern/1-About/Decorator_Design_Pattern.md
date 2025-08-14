@@ -8,6 +8,11 @@ The Decorator Pattern is a **structural design pattern** that lets you **dynamic
 
 Avoids subclass explosion and promotes flexible code by using composition instead of inheritance.
 
+### Why Decorator Pattern?
+
+* Allows behavior to be added to an object dynamically at runtime without modifying its structure.
+* Avoids a combinatorial explosion of subclasses for each add-on combination.
+
 ### Characteristics of Decorator Pattern
 
 * Uses composition over inheritance.
