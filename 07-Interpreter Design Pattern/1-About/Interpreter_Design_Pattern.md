@@ -1,4 +1,4 @@
-# VII. Interpreter Design Pattern
+# Interpreter Design Pattern
 
 ## Introduction to Interpreter Design Pattern
 
